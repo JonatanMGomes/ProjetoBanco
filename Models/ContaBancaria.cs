@@ -2,10 +2,10 @@ namespace ProjetoBanco.Models
 {
     public class ContaBancaria
     {
-        private double Saldo { get; set; }
-        private Titular Titular { get; set; }
-        private int Agencia { get; set; }
-        private string NumeroConta { get; set; }
+        protected double Saldo { get; set; }
+        protected Titular Titular { get; set; }
+        protected int Agencia { get; set; }
+        protected string NumeroConta { get; set; }
         public double GetSaldo()
         {
             return Saldo;
@@ -45,6 +45,10 @@ namespace ProjetoBanco.Models
         public void Depositar(double valor)
         {
             Saldo = Saldo + valor;
+        }
+        public virtual void ExibirSaldo()
+        {
+            Console.WriteLine($"Seu saldo atual é:{Saldo}");
         }
     }
 }

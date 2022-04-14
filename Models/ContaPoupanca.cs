@@ -13,7 +13,7 @@ namespace ProjetoBanco.Models
         }
         public void AtualizarSaldo()
         {
-            SetSaldo((GetSaldo() + TaxaJuros));
+            SetSaldo(GetSaldo()+(GetSaldo()* (TaxaJuros/100)));
         }
     }
 }
